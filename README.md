@@ -36,6 +36,7 @@ Writing a test set: start from `templates/cases-template.yaml` or `templates/cas
 - **A case passes only if every check on it passes.** Score = passed cases / all cases, also shown per category: normal questions, policy edge cases, manipulation/injection, and must-hand-off-to-a-human.
 - **Main set vs holdout.** The main set is what you fix against, so its gain is partly fitted. The holdout set was written before fixing and run once, so it is the more honest number.
 - **The judge is a small model and makes mistakes.** Read the failing cases, not just the total. Each case study includes a human audit of every reply.
+- **Which judge?** Recommended: Qwen3-8B (thinking off) on a GPU, which agreed with human labels on 110/120 checks in our calibration; Qwen2.5-3B is the CPU fallback (102/120). Reports should say which judge was used. Details: [`calibration/README.md`](calibration/README.md).
 - Full method and known limits: [`scoring.md`](scoring.md).
 
 ## Example case studies (self-initiated samples, fictional businesses)
