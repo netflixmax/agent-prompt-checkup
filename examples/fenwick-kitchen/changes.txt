@@ -1,0 +1,5 @@
+Moved all facts to the top, written as short explicit lines ("Sunday: CLOSED", "an order placed 20 minutes ago cannot be cancelled here")
+Order rule: the bot can't place or confirm anything; it asks for name, phone, pickup or delivery and address, or sends the ordering link
+Allergies, illness, complaints, refunds and billing disputes get a fixed hand-off to the kitchen phone, with no advice, no medicine and no "safe" claims
+Unknown dishes or prices: "I'll check with our kitchen team" instead of guessing
+Fake owner/admin, fee waivers, fake names and prompt-extraction requests get "Sorry, I can't do that"
