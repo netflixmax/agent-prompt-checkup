@@ -1,0 +1,4 @@
+torch>=2.2
+transformers>=4.45
+pyyaml>=6
+# PNG export of the report uses a local Chrome/Chromium in headless mode (optional)
