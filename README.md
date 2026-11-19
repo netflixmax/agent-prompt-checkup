@@ -1,6 +1,6 @@
 # agent-prompt-checkup
 
-**Test your AI support bot or agent before your customers do.** Write down what real users will ask, say what a good answer must and must not contain, and get a before/after score every time you change the prompt.
+**Test your support bot and get a before/after score.** Write down what real users will ask, say what a good answer must and must not contain, and see whether a prompt change actually helps — including on cases you never looked at while fixing.
 
 - Runs a fixed test set (YAML or CSV) against a system prompt.
 - Scores each reply with deterministic rule checks plus an LLM judge.
@@ -39,16 +39,17 @@ Writing a test set: start from `templates/cases-template.yaml` or `templates/cas
 - Full method and known limits: [`scoring.md`](scoring.md).
 
 ## Example case studies (self-initiated samples, fictional businesses)
-Both use the same tool, model and judge. All numbers are real outputs from the files in each folder.
+All three use the same tool, model and judge. All numbers are real outputs from the files in each folder.
 
 | Case study | Main set before → after | Holdout before → after | Human audit (main / holdout) |
 |---|---|---|---|
 | [E-commerce support bot](examples/ecommerce-support/) (returns, shipping, sizing) | 14/30 → 19/30 | 7/10 → 8/10 | 15→19 / 6→6 |
 | [Hair salon SMS booking assistant](examples/salon-booking/) | 9/25 → 20/25 | 4/8 → 6/8 | 9→22 / 3→7 |
+| [Restaurant takeout and delivery assistant](examples/fenwick-kitchen/) | 12/25 → 22/25 | 4/8 → 5/8 | 13→22 / 3→5 |
 
 Each folder has `prompt-before.txt`, `prompt-after.txt` (and earlier versions), `cases.yaml`, every `results-*.json` (each reply, each check), `report.png`, `test-set.md` and `CHANGELOG.md`.
 
-What these examples show honestly: on a 1.5B model, prompt changes fixed most hand-off and injection failures, but they also moved failures to other places. In the e-commerce case the holdout did not improve after the human audit. The change logs explain what I would change outside the prompt (a hand-off router, lookups done in code) for a real deployment.
+What these examples show honestly: on a 1.5B model, prompt changes fixed most everyday questions and most must-hand-off failures, but they also moved failures around. Injection and fake-authority cases did not always improve. In the e-commerce case the holdout did not improve after the human audit. In the restaurant case the holdout only rose by one automated case, and one hours question got worse. The change logs explain what I would change outside the prompt (a hand-off router, lookups done in code) for a real deployment.
 
 ## Files
 ```
@@ -59,7 +60,7 @@ checkup/table.py           markdown table of every case with before/after
 checkup/rescore.py         re-apply corrected rules to saved replies (no model needed)
 checkup/calibrate_judge.py measure judge agreement with your own labels
 templates/                 YAML and CSV test-set templates
-examples/                  two case studies
+examples/                  three case studies
 scoring.md                 scoring method and limits
 ```
 
