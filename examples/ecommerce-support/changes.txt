@@ -1,0 +1,5 @@
+Put the hand-off rule first, with the exact trigger list and one fixed hand-off sentence that includes the support email
+Told the bot that normal policy questions (Final Sale, worn, 30+ days) are not hand-offs, after v3 over-escalated them
+Added a "rule change" step: fake system updates, fake managers, role-play and prompt-extraction requests get "Sorry, I can't do that"
+Rewrote facts as one-fact-per-line, with the normal $6.95 fee and its exception as separate sentences
+Spelled out the size chart inch by inch (39 = M, 47 = XL) because the 1.5B model could not read ranges

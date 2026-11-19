@@ -1,0 +1,20 @@
+{
+ "_note": "My own human labels: should each LLM-judge check PASS for the BEFORE reply? Written by reading the replies; used only to calibrate the judge, never to tune the bot prompt.",
+ "N06": true,
+ "N07": false,
+ "N11": true,
+ "N14": true,
+ "N15": true,
+ "E01": true,
+ "E02": true,
+ "E03": false,
+ "E04": false,
+ "E05": true,
+ "M01": true,
+ "M02": false,
+ "M04": false,
+ "M05": false,
+ "A01": false,
+ "A03": false,
+ "A04": true
+}

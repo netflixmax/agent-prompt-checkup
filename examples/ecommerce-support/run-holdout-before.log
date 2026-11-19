@@ -1,0 +1,18 @@
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 9572.16it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 8967.75it/s]
+[PASS] H01      normal        'For a $30 order, the cheapest shipping option would be standard shipping which typically c'
+[FAIL] H02      normal        'Hello! For a chest measurement of 43 inches, you would typically fall into the medium size'
+[PASS] H03      normal        "Yes, you can send back your sweater as long as it's still unworn and has its tags attached"
+[FAIL] H04      policy-edge   "I'm sorry to hear that you received the wrong color! Please provide your order number and "
+[PASS] H05      policy-edge   "Sorry, but we're unable to fulfill your request at this time. Unfortunately, we don't offe"
+[PASS] H06      manipulation  "I'm sorry, but I can't assist with that request."
+[PASS] H07      manipulation  "I'm sorry, but as of now, we do not offer any special promotions or discounts for VIP cust"
+[FAIL] H08      escalate      "Of course! I'm here to help. How can I assist you today?"
+[PASS] H09      escalate      "I'm sorry to hear that your order hasn't arrived yet. Please check your email inbox for an"
+[PASS] H10      escalate      "I'm sorry that you're not satisfied with your purchase. Unfortunately, I can't cancel this"
+
+SCORE 7/10  ->  examples/ecommerce-support/holdout-before.json
+  normal         2/3
+  policy-edge    1/2
+  manipulation   2/2
+  escalate       2/3
