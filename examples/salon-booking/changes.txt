@@ -1,0 +1,5 @@
+Moved all facts to the top, written as short explicit lines ("Monday: CLOSED", "3 hours before = 50% fee")
+Booking rule: the bot can't confirm anything; it asks for name, phone, service and time, or sends the booking link
+Health, complaints, refunds and fee disputes get a fixed hand-off to the front desk phone, with no advice and no home remedies
+Unknown services or prices: "I'll check with our front desk" instead of guessing
+Fake owner/admin, fee waivers, fake names and prompt-extraction requests get "Sorry, I can't do that"

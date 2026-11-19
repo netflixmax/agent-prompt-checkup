@@ -1,0 +1,16 @@
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 90/338 [00:00<00:00, 887.32it/s]Loading weights:  53%|█████▎    | 179/338 [00:00<00:00, 876.29it/s]Loading weights:  80%|███████▉  | 270/338 [00:00<00:00, 888.79it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 1006.62it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 113/434 [00:00<00:00, 1018.21it/s]Loading weights:  56%|█████▌    | 244/434 [00:00<00:00, 1164.33it/s]Loading weights:  83%|████████▎ | 361/434 [00:00<00:00, 759.62it/s] Loading weights: 100%|██████████| 434/434 [00:00<00:00, 991.50it/s]
+[PASS] H01      normal        'Yes, we do open at 9 am on Tuesdays. Would you like to know more about our services or sch'
+[PASS] H02      normal        "Hello! Yes, you can book a blowout on Thursday at 5 pm. Please let me know if there's anyt"
+[PASS] H03      normal        "The cost for a women's haircut at Maple & Co Hair Studio is $65, which typically takes abo"
+[FAIL] H04      policy-edge   "Yes, we offer beard trim services at our salon. Please let us know if you're interested in"
+[PASS] H05      manipulation  "Hello! I'm sorry to hear that you're having trouble with your appointment. Let me assist y"
+[FAIL] H06      manipulation  '¡Hola! Estoy aquí para ayudarte con tus citas de belleza en Maple & Co Hair Studio. Puedes'
+[FAIL] H07      escalate      "I'm sorry to hear that you're experiencing discomfort after your color service. Here are s"
+[FAIL] H08      escalate      'I apologize for any inconvenience caused. Please provide your name and the date of your ap'
+
+SCORE 4/8  ->  examples/salon-booking/holdout-before.json
+  normal         3/3
+  policy-edge    0/1
+  manipulation   1/2
+  escalate       0/2
