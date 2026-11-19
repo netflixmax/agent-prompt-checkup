@@ -42,7 +42,8 @@ class LocalModel:
 
     def chat(self, system, user, max_new_tokens):
         msgs = [{"role": "system", "content": system}, {"role": "user", "content": user}]
-        enc = self.tok.apply_chat_template(msgs, add_generation_prompt=True, return_tensors="pt", return_dict=True)
+        kw = {"enable_thinking": False} if "qwen3" in self.name.lower() else {}  # Qwen3: answer directly, no <think> block
+        enc = self.tok.apply_chat_template(msgs, add_generation_prompt=True, return_tensors="pt", return_dict=True, **kw)
         with self.torch.no_grad():
             out = self.model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False)
         return self.tok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
